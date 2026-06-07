@@ -42,21 +42,63 @@
 
     <form action="/predict" method="POST">
 
-        <input type="number" name="age" placeholder="Age" required>
+    <div class="form-group">
+        <label>Age</label>
+        <input type="number" name="age" required>
+    </div>
 
-        <select name="gender">
-            <option>Male</option>
-            <option>Female</option>
+    <div class="form-group">
+        <label>Years of Experience</label>
+        <input type="number" step="0.1" name="experience" required>
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
         </select>
+    </div>
 
-        <input type="text" name="education" placeholder="Education Level (Bachelor's, Master's)" required>
+    <div class="form-group">
+        <label>Education Level</label>
+        <select name="education" required>
+            <option value="Bachelor's">Bachelor's</option>
+            <option value="Master's">Master's</option>
+            <option value="PhD">PhD</option>
+        </select>
+    </div>
 
-        <input type="text" name="job" placeholder="Job Title (e.g. Data Analyst)" required>
+    <div class="form-group">
+        <label>Job Title</label>
+        <select name="job_title" required>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Data Scientist">Data Scientist</option>
+            <option value="Senior Manager">Senior Manager</option>
+            <option value="Director">Director</option>
+            <option value="Marketing Coordinator">Marketing Coordinator</option>
+            <option value="HR Manager">HR Manager</option>
+            <option value="Operations Manager">Operations Manager</option>
+            <option value="Marketing Manager">Marketing Manager</option>
+            <option value="Sales Director">Sales Director</option>
+            <option value="Business Analyst">Business Analyst</option>
+            <option value="VP of Operations">VP of Operations</option>
+            <option value="IT Support">IT Support</option>
+            <option value="Recruiter">Recruiter</option>
+            <option value="Financial Manager">Financial Manager</option>
+            <option value="Social Media Specialist">Social Media Specialist</option>
+            <option value="CEO">CEO</option>
+            <option value="Junior Developer">Junior Developer</option>
+            <option value="Product Designer">Product Designer</option>
+            <option value="Accountant">Accountant</option>
+        </select>
+    </div>
 
-        <input type="number" name="experience" placeholder="Years of Experience" required>
+    <button type="submit">Predict Salary</button>
 
-        <button type="submit">Predict Salary</button>
-    </form>
+</form>
+
+{{ result_html | safe }}
 
     <h2>{{ prediction_text }}</h2>
 </div>
